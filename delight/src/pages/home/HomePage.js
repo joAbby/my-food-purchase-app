@@ -9,36 +9,56 @@ const HomePage = () => {
 
 const  items= [
         {
-          itemName: 'hats',
-          price:50,
-          imageUrl: '',
+          itemName: 'Burger',
+          price:150,
+          imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
           id: 1
         },
         {
-          itemName: 'hats',
-          price:50,
-          imageUrl: '',
+          itemName: 'Pizza',
+          price:300,
+          imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
           id: 2
         },
         {
-          itemName: 'hats',
-          price:50,
-          imageUrl: '',
+          itemName: 'Donut',
+          price:100,
+          imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
           id: 3
         },
         {
-          itemName: 'hats',
-          price:50,
-          imageUrl: '',
+          itemName: 'Sandwich',
+          price:100,
+          imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
           size: 'large',
           id: 4
         },
         {
-          itemName: 'hats',
+          itemName: 'Pastry',
           price:50,
-          imageUrl: '',
+          imageUrl: 'ttps://i.ibb.co/R70vBrQ/men.png',
           size: 'large',
           id: 5
+        },
+        {
+          itemName: 'Chicken Biriyani',
+          price:150,
+          imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+          id: 6
+        },
+        {
+          itemName: 'Shawarma',
+          price:120,
+          imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+          size: 'large',
+          id: 7
+        },
+        {
+          itemName: 'Pepsi',
+          price:100,
+          imageUrl: 'ttps://i.ibb.co/R70vBrQ/men.png',
+          size: 'large',
+          id: 8
         }
       ]
 const [itemList, setItemList] =useState(items)
