@@ -15,8 +15,8 @@ WebFontLoader.load({
 });
 
 function App() {
-  const userData = JSON.parse(sessionStorage.getItem('userData'));
-  const [user, setUser] = useState(userData);
+  let user = sessionStorage.getItem('userData')
+  const userData = user ? JSON.parse(sessionStorage.getItem('userData')):"";
   return (
     <div>
       <Header user={user}/>

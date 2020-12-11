@@ -26,7 +26,7 @@ const Header = ({user}) => {
       <div className="options__container">
         <Link href="" flexCentered className="option__link">
           <TextIconSpacing>
-          {user ? "SIGN OUT" : "SIGN IN"}
+          {user ? "" : "SIGN IN"}
           </TextIconSpacing>
         </Link>
         <VerticalDivider />
