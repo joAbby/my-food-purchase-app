@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { GoogleLogout } from 'react-google-login';
+import  { Redirect } from 'react-router-dom'
 
 import { AppBar, AppBarAction, AppBarNav } from "@react-md/app-bar";
 import { Link } from "@react-md/link";
@@ -12,8 +14,7 @@ import logo from "../../logo.svg";
 
 import "./Header.scss";
 
-const Header = () => {
-  const [currentUser, setCurrentUser] = useState("Joseline");
+const Header = ({user}) => {
   return (
     <AppBar theme="default" className="header__container">
       <div className="logo__container">
@@ -25,7 +26,7 @@ const Header = () => {
       <div className="options__container">
         <Link href="" flexCentered className="option__link">
           <TextIconSpacing>
-            {currentUser ? "SIGN OUT" : "SIGN IN"}
+          {user ? "" : "SIGN IN"}
           </TextIconSpacing>
         </Link>
         <VerticalDivider />
