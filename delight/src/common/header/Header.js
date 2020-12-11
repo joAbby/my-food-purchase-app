@@ -24,11 +24,11 @@ const Header = ({user}) => {
       </div>
       <VerticalDivider />
       <div className="options__container">
-        <Link href="" flexCentered className="option__link">
+      <NavLink to="/login" className="option__link">
           <TextIconSpacing>
           {user ? "" : "SIGN IN"}
           </TextIconSpacing>
-        </Link>
+          </NavLink>
         <VerticalDivider />
         <NavLink to="/cart" className="option__link">
           <CartIcon />

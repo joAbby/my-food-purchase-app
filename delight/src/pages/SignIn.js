@@ -4,6 +4,8 @@ import GoogleLogin from "react-google-login";
 import createHistory from "history/createBrowserHistory";
 import { withRouter } from "react-router-dom";
 
+import './SignIn.scss'
+
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,7 @@ class SignIn extends React.Component {
       this.signup(response);
     };
     return (
-      <div className="App">
+      <div className="sign__in">
         <div className="row">
           <div className="col-sm-12 btn btn-info">
             Login
