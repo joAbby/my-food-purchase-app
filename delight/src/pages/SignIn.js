@@ -20,7 +20,7 @@ class SignIn extends React.Component {
       this.signup(response);
     };
     return (
-      <div className="App">
+      <div className="signin__container">
         <div className="row">
           <div className="col-sm-12 btn btn-info">
             Login
