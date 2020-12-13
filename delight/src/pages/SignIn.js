@@ -1,47 +1,42 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import GoogleLogin from "react-google-login";
-import createHistory from "history/createBrowserHistory";
-import { withRouter } from "react-router-dom";
+import { setCurrentUser } from "../redux/user/UserActions";
 
-import './SignIn.scss'
+import "./SignIn.scss";
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  signup(res) {
-    const history = createHistory();
-    history.push("/");
-  }
-  render() {
-    const responseGoogle = (response) => {
-      var res = response.profileObj;
-      this.signup(response);
-    };
-    return (
-      <div className="signin__container">
-        <div className="row">
-          <div className="col-sm-12 btn btn-info">
-            Login
+const SignIn = ({ setCurrentUser }) => {
+  const responseGoogle = (response) => {
+    var userData = response.profileObj;
+    setCurrentUser(userData);
+  };
+
+  return (
+    <div className="signin__container">
+      <div className="row">
+        <div className="col-sm-12 btn btn-info">Login</div>
+      </div>
+      <div className="row">
+        <div style={{ paddingTop: "20px" }} className="col-sm-12">
+          <div className="col-sm-4"></div>
+          <div className="col-sm-4">
+            <GoogleLogin
+              clientId="682007759885-up4t94g08brmc84h34qnrsrcefb4vldo.apps.googleusercontent.com"
+              buttonText="Login with Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+            ></GoogleLogin>
           </div>
-        </div>
-        <div className="row">
-          <div style={{ paddingTop: "20px" }} className="col-sm-12">
-            <div className="col-sm-4"></div>
-            <div className="col-sm-4">
-              <GoogleLogin
-                clientId="682007759885-up4t94g08brmc84h34qnrsrcefb4vldo.apps.googleusercontent.com"
-                buttonText="Login with Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-              ></GoogleLogin>
-            </div>
-            <div className="col-sm-4"></div>
-          </div>
+          <div className="col-sm-4"></div>
         </div>
       </div>
-    );
-  }
-}
-export default withRouter(SignIn);
+    </div>
+  );
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);

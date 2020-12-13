@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Card, CardActions, CardTitle, CardSubtitle } from "@react-md/card";
 import { Button } from "@react-md/button";
+import { Card, CardActions, CardTitle, CardSubtitle } from "@react-md/card";
 import { MediaContainer } from "@react-md/media";
 
 import { addItem } from "../../redux/cart/CartActions";
@@ -14,7 +14,7 @@ const MenuItem = ({ itemList, addItem }) => (
     {itemList.map((item) => (
       <Card className="content__container" key={item.id} centered>
         <MediaContainer key={item.id}>
-          <img src={item.imageUrl} alt="food"/>
+          <img src={item.imageUrl} alt="food" />
         </MediaContainer>
         <CardTitle className="content__title">{item.itemName}</CardTitle>
         <CardSubtitle className="content__price">{item.price}</CardSubtitle>
