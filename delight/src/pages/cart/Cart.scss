@@ -38,6 +38,13 @@
 .total__container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   font-size: 26px;
+}
+
+.cart__Item--button{
+  align-items: center;
+  background-color:#a8a8a8;
+  width: 30%;
+
 }

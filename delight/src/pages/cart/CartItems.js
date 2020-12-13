@@ -10,7 +10,7 @@ import {
 import "./CartItems.scss";
 
 const CartItems = ({ item, clearItem, addItem, removeItem }) => {
-  const { itemName, imageUrl, price, quantity } = item;
+  const { itemName, imageUrl, price,GST, quantity } = item;
   return (
     <>
       <div className="image">

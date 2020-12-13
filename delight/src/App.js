@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import logo from "./logo.svg";
 import { Switch, Route, Redirect } from "react-router-dom";
 import WebFontLoader from "webfontloader";
+import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
 
 import HomePage from "./pages/home/HomePage";
 import SignIn from "./pages/SignIn";
 import Header from "./common/header/Header";
 import Cart from "./pages/cart/Cart";
+import { selectCurrentUser } from './redux/user/UserSelectors';
 
 WebFontLoader.load({
   google: {
@@ -14,18 +15,16 @@ WebFontLoader.load({
   },
 });
 
-function App() {
-  let user = sessionStorage.getItem('userData')
-  const userData = user ? JSON.parse(sessionStorage.getItem('userData')):"";
+const App = ({ currentUser }) => {
   return (
     <div>
-      <Header user={user}/>
+      <Header user={currentUser}/>
       <Switch>
       <Route
               exact
               path='/login'
               render={() =>
-                user ? <Redirect to='/' /> : <SignIn />
+                currentUser ? (<Redirect to='/' /> ):( <SignIn/>)
               }
             />
         <Route exact path="/" component={HomePage} />
@@ -35,4 +34,10 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+
+export default connect(
+  mapStateToProps
+)(App);
