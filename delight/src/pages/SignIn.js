@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import GoogleLogin from "react-google-login";
 import { setCurrentUser } from "../redux/user/UserActions";
@@ -33,6 +34,10 @@ const SignIn = ({ setCurrentUser }) => {
       </div>
     </div>
   );
+};
+
+SignIn.propTypes = {
+  setCurrentUser: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({

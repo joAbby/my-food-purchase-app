@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { Button } from "@react-md/button";
 import { Card, CardActions, CardTitle, CardSubtitle } from "@react-md/card";
@@ -31,6 +32,11 @@ const MenuItem = ({ itemList, addItem }) => (
     ))}
   </>
 );
+
+MenuItem.propTypes = {
+  itemList: PropTypes.array.isRequired,
+  addItem: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),
