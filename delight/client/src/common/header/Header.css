@@ -1,0 +1,30 @@
+.App-logo {
+  height: 30px;
+  cursor: pointer; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear; } }
+
+.header__container {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+
+.logo__container {
+  height: 50%;
+  width: 70%;
+  padding: 25px; }
+
+.options__container {
+  width: 20%;
+  height: 100%;
+  align-items: center;
+  display: flex; }
+
+.option__link {
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none; }

@@ -1,0 +1,17 @@
+.cart__icon {
+  width: 2rem;
+  height: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; }
+  .cart__icon .shopping__icon {
+    width: 24px;
+    height: 24px; }
+  .cart__icon .item__count {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-right: 10px; }
