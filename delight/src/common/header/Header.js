@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { AppBar } from "@react-md/app-bar";
 import { Link } from "@react-md/link";
@@ -39,6 +40,10 @@ const Header = ({ currentUser }) => {
       </div>
     </AppBar>
   );
+};
+
+Header.propTypes = {
+  currentUser: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
