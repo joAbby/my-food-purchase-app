@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import {
   clearItemFromCart,
@@ -10,7 +11,7 @@ import {
 import "./CartItems.scss";
 
 const CartItems = ({ item, clearItem, addItem, removeItem }) => {
-  const { itemName, imageUrl, price,GST, quantity } = item;
+  const { itemName, imageUrl, price, quantity } = item;
   return (
     <>
       <div className="image">
@@ -28,6 +29,13 @@ const CartItems = ({ item, clearItem, addItem, removeItem }) => {
       </div>
     </>
   );
+};
+
+CartItems.propTypes = {
+  item: PropTypes.array.isRequired,
+  clearItem: PropTypes.func,
+  addItem: PropTypes.func,
+  removeItem: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => ({

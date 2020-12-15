@@ -59,7 +59,7 @@ const HomePage = () => {
       id: 8,
     },
   ];
-  const [itemList, setItemList] = useState(items);
+  const [itemList] = useState(items);
   return (
     <div className="homepage">
       <MenuItem itemList={itemList}></MenuItem>
