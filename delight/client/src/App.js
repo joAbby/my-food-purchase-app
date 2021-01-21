@@ -4,11 +4,12 @@ import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import HomePage from "./pages/home/HomePage";
+//import HomePage from "./pages/home/HomePage";
 import SignIn from "./pages/SignIn";
 import Header from "./common/header/Header";
 import Cart from "./pages/cart/Cart";
 import { selectCurrentUser } from "./redux/user/UserSelectors";
+import SignUp from "./pages/SignUp";
 
 WebFontLoader.load({
   google: {
@@ -26,7 +27,7 @@ const App = ({ currentUser }) => {
           path="/login"
           render={() => (currentUser ? <Redirect to="/" /> : <SignIn />)}
         />
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={SignUp} />
         <Route exact path="/cart" component={Cart} />
       </Switch>
     </div>

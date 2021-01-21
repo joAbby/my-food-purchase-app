@@ -5,4 +5,4 @@ import rootReducer from './RootReducer';
 
 export const store = createStore(rootReducer);
 
-export default { store};
+export default  store;
