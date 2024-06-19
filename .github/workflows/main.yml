@@ -2,10 +2,10 @@ name:first workflow
 on:workflow_dispath
 jobs:
  first_job
- runs_on:windows_latest
- steps:
-  - name:print greetings
-    run:
-  - name:goodbye
-    run
+  runs_on:windows_latest
+  steps:
+   - name:print greetings
+     run:echo "Hello world"
+   - name:goodbye
+     run:echo "Hello world"
   
